@@ -1,0 +1,200 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f5fb;
+  color: #252b42;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+.task-container {
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  height: fit-content;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.task-container > p {
+  color: #777;
+  margin-bottom: 25px;
+}
+
+/* Add task form */
+
+.task-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #5b63e6;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.task-form button {
+  background-color: #5b63e6;
+  color: white;
+  padding: 0 20px;
+  white-space: nowrap;
+}
+
+/* Search */
+
+.search {
+  margin-bottom: 18px;
+}
+
+/* Filter buttons */
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters button {
+  padding: 9px 18px;
+  background-color: white;
+  border: 1px solid #ddd;
+  color: #444;
+}
+
+.filters button.active-filter {
+  background-color: #5b63e6;
+  color: white;
+  border-color: #5b63e6;
+}
+
+/* Task list */
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.task > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.task span {
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
+.task small {
+  font-size: 12px;
+  color: #e99a24;
+}
+
+.task .completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.task small:has(+ span) {
+  color: #20a46b;
+}
+
+.task button {
+  background-color: #e9eaff;
+  color: #5159d5;
+  padding: 8px 12px;
+  white-space: nowrap;
+}
+
+.no-tasks {
+  text-align: center;
+  padding: 25px 10px;
+  color: #888;
+}
+
+/* Mobile responsive design */
+
+@media (max-width: 500px) {
+  .app {
+    padding: 20px 12px;
+  }
+
+  .task-container {
+    padding: 20px 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .task-form {
+    flex-direction: column;
+  }
+
+  .task-form button {
+    padding: 12px;
+  }
+
+  .filters {
+    gap: 6px;
+  }
+
+  .filters button {
+    flex: 1;
+    padding: 9px 5px;
+    font-size: 13px;
+  }
+
+  .task {
+    padding: 12px 9px;
+  }
+}
